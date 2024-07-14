@@ -1,18 +1,13 @@
 import Image from 'next/image';
 import { promises as fs } from 'fs';
 
-import Card from './components/Card';
-import FolderCard from './components/FolderCard';
+
+import FolderCardList from './FolderCardList';
+import LinkList from './LinkList';
 
 export default async function Home() {
   const file = await fs.readFile('./app/pintree.json', 'utf8');
-  const data = JSON.parse(file);
-  const folders = data.filter((item: any) => item.type === 'folder');
-  const links = data
-    .filter((item: any) => item.type === 'link')
-    .sort((a: any, b: any) => b.addDate - a.addDate);
-  console.log('folders', folders);
-  console.log('links', links);
+  const data = JSON.parse(file)[0]['children'];
 
   return (
     <div>
@@ -85,11 +80,13 @@ export default async function Home() {
         {/* <!-- Sidebar component, swap this element with another sidebar if you like --> */}
         <div className="flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white px-4 h-full font-semibold dark:bg-gray-900">
           <div className="flex p-0 h-16 shrink-0 items-center">
-            {/* <Image
+            <Image
               className="pl-2 h-8 w-auto"
-              src="assets/logo.svg"
+              src="logo.svg"
+              width={10}
+              height={10}
               alt="Pintree"
-            /> */}
+            />
             <a href="" className="ml-4 font-extrabold text-2xl dark:text-white">
               Pintree
             </a>
@@ -212,15 +209,16 @@ export default async function Home() {
           </div>
           <div id="bookmarks" className="grid gap-6 p-6">
             {/* <!-- Bookmark cards will be inserted here --> */}
-            {folders.map((e: any) => (
+            {/* {folders.map((e: any) => (
               <FolderCard key={e} title={e.title} />
             ))}
 
             {folders.forEach((e: any) => {
               console.log(e);
               return <FolderCard key={e} title={e.title} />;
-            })}
-            <Card />
+            })} */}
+            <FolderCardList data={data} />
+            <LinkList data={data} />
           </div>
         </main>
         <footer className="bg-white w-full dark:bg-gray-900">
