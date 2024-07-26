@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pintree
 
-## Getting Started
+[English](README.md) | [中文](README.zh.md)
 
-First, run the development server:
+Pintree is an open-source project that aims to convert browser bookmarks into a navigation website. With just a few simple steps, you can transform your bookmarks into a beautiful and user-friendly navigation page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features and Goals
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Export browser bookmarks
+- Convert bookmark files to JSON format
+- Generate a static navigation website
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation and Running
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Step 1: Download Browser Bookmarks
 
-## Learn More
+1. Install the [Pintree Bookmarks Exporter](https://chromewebstore.google.com/detail/pintree-bookmarks-exporte/mjcglnkikjidokobpfdcdmcnfdicojce) extension.
+2. Use the extension to export browser bookmarks and save the JSON file locally.
 
-To learn more about Next.js, take a look at the following resources:
+![](https://github.com/Pintree-io/pintree/blob/main/assets/guide/step1.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Step 2: Fork the Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Visit the [Pintree GitHub repository](https://github.com/Pintree-io/pintree).
+2. Click the `Fork` button in the upper right corner of the page to fork the project to your GitHub account.
 
-## Deploy on Vercel
+![](https://github.com/Pintree-io/pintree/blob/main/assets/guide/step2.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Step 3: Replace the JSON File
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Open the `pintree` repository in your GitHub account (the one you just forked).
+2. Click on the `json` folder in the repository.
+3. Click the `Upload files` button, select the JSON file you downloaded earlier, and upload it.
+4. Make sure the uploaded file is named `pintree.json`, and select `Commit changes`.
+
+![](https://github.com/Pintree-io/pintree/blob/main/assets/guide/step3.png)
+
+### Step 4: Enable GitHub Pages
+
+1. In your `pintree` repository page, click on `Settings`.
+2. Find the `Pages` option.
+3. In the `Source` dropdown menu, select the `gh-pages` branch and click `Save`.
+4. After a few minutes, your static website will be available at `https://yourusername.github.io/pintree`. Remember to replace `yourusername`.
+
+![](https://github.com/Pintree-io/pintree/blob/main/assets/guide/step4.png)
+
+## Technologies Used
+
+- HTML/CSS/JavaScript
+- JSON format processing
+- Static website hosting
+
+## Contribution Guidelines
+
+Contributions are welcome! Please follow these steps to participate in the project:
+
+1. Fork this repository: https://github.com/Pintree-io/pintree/tree/main
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Submit a Pull Request
+
+Please note that the `main` branch is the source code branch of the project, while the `gh-pages` branch is the branch for the packaged static website code. Develop and submit changes on the `main` branch, and we will be responsible for packaging and publishing the code to the `gh-pages` branch.
+
+## Contact
+
+If you have any questions or suggestions, please contact us through the following ways:
+- Project website: [Pintree](https://pintree.io/)
+- Email: viggo.zw@gmail.com
+
+Thank you for using and supporting Pintree!
